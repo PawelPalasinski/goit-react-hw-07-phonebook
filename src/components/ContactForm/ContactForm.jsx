@@ -39,11 +39,7 @@ const ContactForm = () => {
     <div className={styles.phonebook}>
       <svg
         className={styles.phonebookSvg}
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          // x="0px"
-          // y="0px"
+          id="phone"
           width="60px"
           height="60px"
           viewBox="0 0 299.995 299.995"
