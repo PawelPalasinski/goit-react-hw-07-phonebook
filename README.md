@@ -13,7 +13,7 @@
 
 RTK Query
 
-## 🌐 [gh pages](https://pawelpalasinski.github.io/goit-react-hw-07-phonebook/)
+## 🌐 [GitHub Pages](https://pawelpalasinski.github.io/goit-react-hw-07-phonebook/)
 
 
 
