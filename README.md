@@ -15,6 +15,4 @@ RTK Query
 
 ## 🌐 [GitHub Pages](https://pawelpalasinski.github.io/goit-react-hw-07-phonebook/)
 
-
-
 </div>
