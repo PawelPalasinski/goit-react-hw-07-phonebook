@@ -7,30 +7,38 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://6334c762ea0de5318a08dccd.mockapi.io/v1/',
   }),
+  tagTypes: ['Contacts'],
   endpoints: builder => ({
     getContacts: builder.query({
       query: () => '/contacts',
+      providesTags: ['Contacts'],
     }),
+
     addContact: builder.mutation({
       query: contact => ({
         url: 'contacts/',
         method: 'POST',
         body: contact,
       }),
+      invalidatesTags: ['Contacts'],
     }),
+
     updateContact: builder.mutation({
       query: contacts => ({
         url: `contacts/${contacts.id}`,
         method: 'PATCH',
         body: contacts,
       }),
-      updateContact: builder.mutation({
-        query: ({ id }) => ({
-          url: `contacts/${id}`,
-          method: 'DELETE',
-          body: id,
-        }),
+      invalidatesTags: ['Contacts'],
+    }),
+
+    deleteContact: builder.mutation({
+      query: ({ id }) => ({
+        url: `contacts/${id}`,
+        method: 'DELETE',
+        body: id,
       }),
+      invalidatesTags: ['Contacts'],
     }),
   }),
 });
@@ -40,5 +48,5 @@ export const {
   useGetContactsQuery,
   useAddContactsMutation,
   useUpdateContactsMutation,
-  useDeleteContactsMutation
+  useDeleteContactsMutation,
 } = apiSlice;
