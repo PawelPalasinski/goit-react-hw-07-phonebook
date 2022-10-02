@@ -4,6 +4,11 @@ import { addContacts } from 'redux/slices/contacts';
 import { nanoid } from 'nanoid';
 import styles from './ContactForm.module.css';
 
+
+
+
+
+
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
