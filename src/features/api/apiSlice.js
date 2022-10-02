@@ -1,11 +1,12 @@
 // https://www.youtube.com/watch?v=HyZzCHgG3AY <- React Redux Toolkit Query Tutorial and RTK Query CRUD Example App
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { BASE_URL } from 'constans/baseURL';
 
 export const apiSlice = createApi({
-  reducerPath: 'api',
+  reducerPath: '',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://6334c762ea0de5318a08dccd.mockapi.io/v1/',
+    baseUrl: BASE_URL,
   }),
   tagTypes: ['Contacts'],
   endpoints: builder => ({
@@ -23,14 +24,14 @@ export const apiSlice = createApi({
       invalidatesTags: ['Contacts'],
     }),
 
-    updateContact: builder.mutation({
-      query: contacts => ({
-        url: `contacts/${contacts.id}`,
-        method: 'PATCH',
-        body: contacts,
-      }),
-      invalidatesTags: ['Contacts'],
-    }),
+    // updateContact: builder.mutation({
+    //   query: contacts => ({
+    //     url: `contacts/${contacts.id}`,
+    //     method: 'PATCH',
+    //     body: contacts,
+    //   }),
+    //   invalidatesTags: ['Contacts'],
+    // }),
 
     deleteContact: builder.mutation({
       query: ({ id }) => ({
@@ -46,7 +47,7 @@ export const apiSlice = createApi({
 // custom hooks
 export const {
   useGetContactsQuery,
-  useAddContactsMutation,
-  useUpdateContactsMutation,
-  useDeleteContactsMutation,
+  useAddContactMutation,
+  // useUpdateContactMutation,
+  useDeleteContactMutation,
 } = apiSlice;

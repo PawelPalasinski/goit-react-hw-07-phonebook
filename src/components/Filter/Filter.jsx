@@ -6,7 +6,8 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   const changeFilter = e => {
-    const value = e.target.value.toLowerCase();
+    e.preventDefault();
+    const value = e.currentTarget.value;
     dispatch(filterContacts(value));
   };
 
@@ -14,7 +15,6 @@ const Filter = () => {
     <input
       className={styles.filter}
       type="text"
-      name="filter"
       onChange={changeFilter}
       placeholder="Enter name for Search"
     />

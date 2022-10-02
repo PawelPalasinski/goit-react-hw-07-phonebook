@@ -1,33 +1,34 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteContacts } from '../../redux/slices/contacts';
+import { useSelector } from 'react-redux';
+import {
+  useGetContactsQuery,
+  useDeleteContactMutation,
+} from '../../features/api/apiSlice';
 import styles from './ContactList.module.css';
 
-const ContactList = () => {
+const ContactList = ({ children }) => {
   const filtersContacts = (contacts, filter) =>
     contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
 
-  const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
-  const dispatch = useDispatch();
-  const contactsList = filtersContacts(contacts, filter);
 
-  const deleteItem = id => {
-    dispatch(deleteContacts(id));
-  };
+  const { data: contacts = [] } = useGetContactsQuery();
+  const [deleteContact] = useDeleteContactMutation();
+  const contactsList = filtersContacts(contacts, filter);
 
   return (
     <div className={styles.contacts}>
+      {children}
       <h2>Contacts</h2>
       <ul>
-        {contactsList.map(({ name, number, id }) => (
-          <li key={id}>
+        {contactsList.map(({ name, phone, id }) => (
+          <li key={id} id={id}>
             <p>
               <span>{name} : </span>
-              {number}
+              {phone}
             </p>
-            <button type="button" onClick={() => deleteItem(id)}>
+            <button type="button" onClick={() => deleteContact({ id })}>
               ⛌
             </button>
           </li>
