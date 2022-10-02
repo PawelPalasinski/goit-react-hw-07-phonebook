@@ -11,7 +11,7 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="40" height="40"/>
 
-RTK Query
+### RTK Query
 
 ## 🌐 [GitHub Pages](https://pawelpalasinski.github.io/goit-react-hw-07-phonebook/)
 
