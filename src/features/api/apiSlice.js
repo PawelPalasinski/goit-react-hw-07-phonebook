@@ -1,7 +1,7 @@
 // https://www.youtube.com/watch?v=HyZzCHgG3AY <- React Redux Toolkit Query Tutorial and RTK Query CRUD Example App
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { BASE_URL } from 'constans/baseURL';
+import { BASE_URL } from 'constants/baseURL';
 
 export const apiSlice = createApi({
   reducerPath: '',
