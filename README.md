@@ -1,6 +1,6 @@
 <div align="center">
 
-# [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FFFFFF&center=true&width=435&lines=React+7th+homework)](https://git.io/typing-svg)
+# [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FFFFFF&center=true&width=435&lines=Phonebook-App)](https://git.io/typing-svg)
 
 ## Technologies
 
